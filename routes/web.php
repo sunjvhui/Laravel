@@ -11,14 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
-
 Route::get('/welcome', function () {
     return view('welcome');
 });
 
-Route::get('/bbs', function () {
-    return view('bbs');
-});
+Route::any('/','userController@show');
+
+Route::get('bbs/{id}', 'bbsController@show');
