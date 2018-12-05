@@ -5,23 +5,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/css/bootstrap.min.css">
-    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdn.staticfile.org/popper.js/1.12.5/umd/popper.min.js"></script>
-    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/js/bootstrap.min.js"></script>
 </head>
 <body>
 {{--导航栏--}}
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
-    <a class="navbar-brand" href="#">博客</a>
-    <ul class="navbar-nav">
-        <li class="nav-item">
-            <a class="nav-link" href="#">首页</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">我的个人主页</a>
-        </li>
-    </ul>
-</nav>
+@extends('layouts.app')
 
 <div class="jumbotron text-center">
     <h1>我的PHP博客</h1>
@@ -79,7 +66,10 @@
                     <td>{{$user->id}}</td>
                     <td>{{$user->name}}</td>
                     <td>{{$user->mobile}}</td>
-                    <td><a href="/bbs/{{$user->id}}">查看帖子</a></td>
+                    <td><a href="/bbs/{{$user->id}}">查看帖子</a>
+                        <a class="del" href="/del/{{$user->id}}">删除</a>
+                    </td>
+
                 </tr>
                 @endforeach
                 </tbody>

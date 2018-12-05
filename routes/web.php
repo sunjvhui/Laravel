@@ -18,3 +18,11 @@ Route::get('/welcome', function () {
 Route::any('/','userController@show');
 
 Route::get('bbs/{id}', 'bbsController@show');
+
+Route::get('del/{id}', 'userController@del');
+
+Route::any('/mv', 'mv\mvController@show');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');

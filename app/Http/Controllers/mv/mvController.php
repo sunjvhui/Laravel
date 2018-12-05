@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\mv;
 
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class userController extends Controller
+class mvController extends Controller
 {
     /**
      * 为指定用户显示详情
@@ -17,13 +17,14 @@ class userController extends Controller
      */
     public function show(Request $request)
     {
-        $name = $request->input('name');
-        $mobile = $request->input('mobile');
-        $password = $request->input('password');
-        if ($name && $mobile && $password) {
+        $title = $request->input('title');
+        $describe = $request->input('describe');
+        $img = $request->input('img');
+        $link = $request->input('link');
+        if ($title && $describe && $img && $link) {
             //新建数据
-            DB::table('user')->insertGetId(
-                [ 'name' => $name, 'mobile' => $mobile, 'password' => $password]
+            DB::table('mv')->insertGetId(
+                [ 'title' => $title, 'describe' => $describe, 'img' => $img, 'link' => $link]
             );
         }
 
@@ -33,9 +34,9 @@ class userController extends Controller
 //        删除数据
 //        DB::table('user')->where('id',4)->delete();
 //        查询数据
-        $users = DB::table('user')->orderBy('id', 'desc')->paginate(5);
+        $lists = DB::table('mv')->orderBy('id', 'desc')->paginate(5);
 
-        return view('index', ['users' => $users]);
+        return view('mv/mv', ['lists' => $lists]);
     }
 
     public function del ($id)
