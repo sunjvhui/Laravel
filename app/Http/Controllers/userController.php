@@ -45,7 +45,7 @@ class userController extends Controller
 //        查询数据
         $users = DB::table('user')->orderBy('id', 'desc')->paginate(5);
 
-        return view('index', ['users' => $users]);
+        return redirect('index', ['users' => $users]);
     }
 
 

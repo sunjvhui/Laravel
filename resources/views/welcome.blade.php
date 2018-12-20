@@ -7,12 +7,15 @@
         <title>Laravel</title>
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
+         <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/css/bootstrap.min.css">
+         <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+         <script src="https://cdn.staticfile.org/popper.js/1.12.5/umd/popper.min.js"></script>
+         <script src="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/js/bootstrap.min.js"></script
 
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #fff;
+                background-color: #EEEEEE;
                 color: #636b6f;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
@@ -80,9 +83,9 @@
             @endif
 
             <div class="content">
-                <div class="title m-b-md">
-                    我测试
-                </div>
+                <div class="container">
+                  <img src="http://static.runoob.com/images/mix/cinqueterre.jpg" class="rounded-circle" alt="Cinque Terre">
+                </div><br>
 
                 <div class="links">
                     <a href="https://laravel.com/docs">Documentation</a>
